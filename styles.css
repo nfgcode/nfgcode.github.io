@@ -7,6 +7,13 @@ body {
     background: #f4f4f4;
 }
 
+.fotoprofil {
+    width: 100px; /* Atur lebar gambar */
+    height: 100px; /* Atur tinggi gambar */
+    border-radius: 50%; /* Membuat gambar bulat */
+    margin-right: 20px; /* Memberikan jarak antara gambar dan teks */
+}
+
 header, section, footer {
     padding: 20px;
     text-align: center;
