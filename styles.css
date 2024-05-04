@@ -29,7 +29,7 @@ h1, h2 {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.fotoprofil {
+.gallery {
     width: 100px; /* Atur lebar gambar */
     height: 100px; /* Atur tinggi gambar */
     border-radius: 50%; /* Membuat gambar bulat */
