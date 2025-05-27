@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portofolio Nurfauzann</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- AOS Animation CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #121212;
+      color: #ffffff;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    /* Neon marquee style */
+    .marquee {
+      white-space: nowrap;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+
+    .marquee h1 {
+      display: inline-block;
+      padding-left: 100%;
+      animation: marquee 10s linear infinite;
+      font-size: 3rem;
+      color: #00fff7;
+      text-shadow: 0 0 5px #00fff7, 0 0 10px #00fff7, 0 0 20px #00fff7;
+    }
+
+    @keyframes marquee {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(-100%, 0); }
+    }
+
+    section {
+      padding: 60px 0;
+    }
+
+    .card {
+      background-color: #1e1e1e;
+      border: none;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 255, 247, 0.2);
+    }
+
+    a {
+      color: #00fff7;
+    }
+
+    footer {
+      background-color: #000;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="text-center py-5">
+    <div class="marquee">
+      <h1>Nurfauzann</h1>
+    </div>
+    <p class="lead mt-3" data-aos="fade-up">Mahasiswa Informatika | Web Developer | UI/UX Enthusiast</p>
+  </header>
+
+  <!-- Tentang Saya -->
+  <section class="container" id="about" data-aos="fade-right">
+    <h2 class="mb-3">Tentang Saya</h2>
+    <p>Saya Nurfauzann, mahasiswa Informatika yang bersemangat dalam dunia pemrograman dan desain web. Saya memiliki ketertarikan pada pengembangan aplikasi web yang responsif, estetis, dan user-friendly.</p>
+  </section>
+
+  <!-- Project Showcase -->
+  <section class="container" id="projects">
+    <h2 class="mb-5 text-center" data-aos="zoom-in">Proyek Saya</h2>
+    <div class="row g-4">
+      <div class="col-md-4" data-aos="fade-up">
+        <div class="card p-3">
+          <h5 class="card-title">Website Portfolio</h5>
+          <p class="card-text">Website ini saya buat sebagai sarana untuk memperkenalkan diri dan menampilkan karya-karya saya.</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="card p-3">
+          <h5 class="card-title">Aplikasi ToDo List</h5>
+          <p class="card-text">Aplikasi sederhana berbasis web yang memungkinkan pengguna mengatur tugas harian mereka.</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="card p-3">
+          <h5 class="card-title">Desain UI Mobile</h5>
+          <p class="card-text">Desain antarmuka pengguna untuk aplikasi mobile dengan fokus pada kenyamanan dan estetika.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontak -->
+  <section class="container" id="contact" data-aos="fade-left">
+    <h2 class="mb-3">Kontak</h2>
+    <ul class="list-unstyled">
+      <li>Email: <a href="mailto:nurfauzann@example.com">nurfauzann@example.com</a></li>
+      <li>LinkedIn: <a href="#">linkedin.com/in/nurfauzann</a></li>
+      <li>GitHub: <a href="#">github.com/nurfauzann</a></li>
+    </ul>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-3 text-light">
+    <p>&copy; 2025 Nurfauzann. All rights reserved.</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- AOS JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+      duration: 1000
+    });
+  </script>
+</body>
+</html>
