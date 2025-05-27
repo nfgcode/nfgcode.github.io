@@ -17,16 +17,26 @@
       font-family: 'Segoe UI', sans-serif;
     }
 
-    .hero-text h1 {
-      font-size: 2.8rem;
+    /* Typing Effect */
+    .typing-container {
+      font-size: 2.5rem;
       font-weight: bold;
       color: #00fff7;
       text-shadow: 0 0 5px #00fff7;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid #00fff7;
+      width: 0;
+      animation: typing 3s steps(25, end) forwards, blink 0.75s step-end infinite;
     }
 
-    .hero-text p {
-      font-size: 1.25rem;
-      color: #ddd;
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 21ch; } /* Length of "Hi, I'm Nurfauzann" */
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
     }
 
     section {
@@ -53,7 +63,6 @@
     a {
       color: #00fff7;
       text-decoration: none;
-      transition: color 0.3s ease, text-shadow 0.3s ease;
     }
 
     a:hover {
@@ -70,8 +79,10 @@
 <body>
 
   <!-- Hero Section -->
-  <header class="text-center py-5 hero-text">
-    <h1 data-aos="fade-up">Hi, I’m Nurfauzann</h1>
+  <header class="text-center py-5">
+    <div class="typing-container mx-auto" data-aos="fade-up">
+      Hi, I'm Nurfauzann
+    </div>
     <p class="lead mt-3" data-aos="fade-up" data-aos-delay="200">
       a frontend-focused developer who loves turning designs into dynamic web experiences.
     </p>
