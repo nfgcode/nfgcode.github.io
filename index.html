@@ -12,29 +12,21 @@
 
   <style>
     body {
-      background-color: #000000;
+      background-color: #000;
       color: #f1f1f1;
       font-family: 'Segoe UI', sans-serif;
     }
 
-    .marquee {
-      white-space: nowrap;
-      overflow: hidden;
-      box-sizing: border-box;
-    }
-
-    .marquee h1 {
-      display: inline-block;
-      padding-left: 100%;
-      animation: marquee 10s linear infinite;
-      font-size: 3rem;
+    .hero-text h1 {
+      font-size: 2.8rem;
+      font-weight: bold;
       color: #00fff7;
-      text-shadow: 0 0 5px #00fff7, 0 0 10px #00fff7, 0 0 20px #00fff7;
+      text-shadow: 0 0 5px #00fff7;
     }
 
-    @keyframes marquee {
-      0% { transform: translate(0, 0); }
-      100% { transform: translate(-100%, 0); }
+    .hero-text p {
+      font-size: 1.25rem;
+      color: #ddd;
     }
 
     section {
@@ -42,7 +34,7 @@
     }
 
     .card {
-      background-color: #111111;
+      background-color: #111;
       border: 1px solid #222;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       color: #f1f1f1;
@@ -77,18 +69,18 @@
 </head>
 <body>
 
-  <!-- Header -->
-  <header class="text-center py-5">
-    <div class="marquee">
-      <h1>Nurfauzann</h1>
-    </div>
-    <p class="lead mt-3" data-aos="fade-up">Mahasiswa Informatika | Web Developer | UI/UX Enthusiast</p>
+  <!-- Hero Section -->
+  <header class="text-center py-5 hero-text">
+    <h1 data-aos="fade-up">Hi, I’m Nurfauzann</h1>
+    <p class="lead mt-3" data-aos="fade-up" data-aos-delay="200">
+      a frontend-focused developer who loves turning designs into dynamic web experiences.
+    </p>
   </header>
 
   <!-- Tentang Saya -->
   <section class="container" id="about" data-aos="fade-right">
     <h2 class="mb-3">Tentang Saya</h2>
-    <p>Saya Nurfauzann, mahasiswa Informatika yang bersemangat dalam dunia pemrograman dan desain web. Saya memiliki ketertarikan pada pengembangan aplikasi web yang responsif, estetis, dan user-friendly.</p>
+    <p>Saya Nurfauzann, mahasiswa Informatika yang berfokus pada pengembangan antarmuka dan pengalaman pengguna. Saya memiliki semangat dalam menciptakan web yang estetis, fungsional, dan efisien.</p>
   </section>
 
   <!-- Project Showcase -->
