@@ -12,12 +12,11 @@
 
   <style>
     body {
-      background-color: #121212;
-      color: #ffffff;
+      background-color: #000000;
+      color: #f1f1f1;
       font-family: 'Segoe UI', sans-serif;
     }
 
-    /* Neon marquee style */
     .marquee {
       white-space: nowrap;
       overflow: hidden;
@@ -43,22 +42,36 @@
     }
 
     .card {
-      background-color: #1e1e1e;
-      border: none;
-      transition: transform 0.3s ease;
+      background-color: #111111;
+      border: 1px solid #222;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      color: #f1f1f1;
     }
 
     .card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 10px 20px rgba(0, 255, 247, 0.2);
+      box-shadow: 0 0 20px rgba(0, 255, 247, 0.2);
+    }
+
+    h2 {
+      color: #00fff7;
+      text-shadow: 0 0 5px #00fff7;
     }
 
     a {
       color: #00fff7;
+      text-decoration: none;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    a:hover {
+      color: #00ffe0;
+      text-shadow: 0 0 8px #00ffe0;
     }
 
     footer {
-      background-color: #000;
+      background-color: #111;
+      color: #aaa;
     }
   </style>
 </head>
@@ -114,7 +127,7 @@
   </section>
 
   <!-- Footer -->
-  <footer class="text-center py-3 text-light">
+  <footer class="text-center py-3">
     <p>&copy; 2025 Nurfauzann. All rights reserved.</p>
   </footer>
 
