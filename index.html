@@ -7,8 +7,10 @@
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- AOS Animation CSS -->
+  <!-- AOS CSS -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
     body {
@@ -17,6 +19,7 @@
       font-family: 'Segoe UI', sans-serif;
     }
 
+    /* Profile Image with Glow Fade */
     .profile-img {
       width: 160px;
       height: 160px;
@@ -24,23 +27,15 @@
       border-radius: 50%;
       border: 4px solid #00fff7;
       box-shadow: 0 0 20px rgba(0, 255, 247, 0.6);
-      animation: rotateGlow 6s linear infinite;
+      animation: glowFade 1s ease-in-out infinite alternate;
     }
 
-    @keyframes rotateGlow {
-      0% {
-        transform: rotate(0deg);
-        box-shadow: 0 0 20px rgba(0, 255, 247, 0.6);
-      }
-      50% {
-        box-shadow: 0 0 30px rgba(0, 255, 247, 1);
-      }
-      100% {
-        transform: rotate(360deg);
-        box-shadow: 0 0 20px rgba(0, 255, 247, 0.6);
-      }
+    @keyframes glowFade {
+      from { box-shadow: 0 0 15px rgba(0, 255, 247, 0.3); }
+      to { box-shadow: 0 0 30px rgba(0, 255, 247, 0.9); }
     }
 
+    /* Typing effect once */
     .typing-container {
       font-size: 2.5rem;
       font-weight: bold;
@@ -55,11 +50,29 @@
 
     @keyframes typing {
       from { width: 0; }
-      to { width: 21ch; } /* Length of "Hi, I'm Nurfauzann" */
+      to { width: 21ch; }
     }
 
     @keyframes blink {
       50% { border-color: transparent; }
+    }
+
+    /* Infinite typing text for subtitle */
+    .typing-loop {
+      font-size: 1.25rem;
+      margin-top: 10px;
+      color: #ccc;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid #00fff7;
+      width: 0;
+      animation: typingLoop 10s steps(70, end) infinite, blink 0.75s step-end infinite;
+    }
+
+    @keyframes typingLoop {
+      0% { width: 0; }
+      50% { width: 70ch; }
+      100% { width: 0; }
     }
 
     section {
@@ -97,6 +110,15 @@
       background-color: #111;
       color: #aaa;
     }
+
+    .contact-icons i {
+      margin-right: 10px;
+      color: #00fff7;
+    }
+
+    .contact-icons li {
+      margin-bottom: 10px;
+    }
   </style>
 </head>
 <body>
@@ -107,15 +129,15 @@
     <div class="typing-container mx-auto" data-aos="fade-up">
       Hi, I'm Nurfauzann
     </div>
-    <p class="lead mt-3" data-aos="fade-up" data-aos-delay="200">
+    <div class="typing-loop mx-auto" data-aos="fade-up" data-aos-delay="200">
       a frontend-focused developer who loves turning designs into dynamic web experiences.
-    </p>
+    </div>
   </header>
 
   <!-- Tentang Saya -->
   <section class="container" id="about" data-aos="fade-right">
-    <h2 class="mb-3">Tentang Saya</h2>
-    <p>Saya Nurfauzann, mahasiswa Informatika yang berfokus pada pengembangan antarmuka dan pengalaman pengguna. Saya memiliki semangat dalam menciptakan web yang estetis, fungsional, dan efisien.</p>
+    <h2 class="mb-3">About me</h2>
+    <p>Hello! everyone! Iam a Informatics Student at Institute Teknologi Kalimantan. I bring a unique blend of technical skills and problems solving. </p>
   </section>
 
   <!-- Project Showcase -->
@@ -125,7 +147,7 @@
       <div class="col-md-4" data-aos="fade-up">
         <div class="card p-3">
           <h5 class="card-title">Website Portfolio</h5>
-          <p class="card-text">Website ini saya buat sebagai sarana untuk memperkenalkan diri dan menampilkan karya-karya saya.</p>
+          <p class="card-text">Website ini saya buat sebagai sarana dalam memperkenalkan diri dan menampilkan karya-karya saya.</p>
         </div>
       </div>
       <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
@@ -146,10 +168,10 @@
   <!-- Kontak -->
   <section class="container" id="contact" data-aos="fade-left">
     <h2 class="mb-3">Kontak</h2>
-    <ul class="list-unstyled">
-      <li>Email: <a href="mailto:nurfauzann@example.com">nurfauzann@example.com</a></li>
-      <li>LinkedIn: <a href="#">linkedin.com/in/nurfauzann</a></li>
-      <li>GitHub: <a href="#">github.com/nurfauzann</a></li>
+    <ul class="list-unstyled contact-icons">
+      <li><i class="fas fa-envelope"></i><a href="mailto:nurfauzann@example.com">nurfauzann@example.com</a></li>
+      <li><i class="fab fa-linkedin"></i><a href="#">linkedin.com/in/nurfauzann</a></li>
+      <li><i class="fab fa-github"></i><a href="#">github.com/nurfauzann</a></li>
     </ul>
   </section>
 
@@ -158,9 +180,8 @@
     <p>&copy; 2025 Nurfauzann. All rights reserved.</p>
   </footer>
 
-  <!-- Bootstrap JS -->
+  <!-- JS Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- AOS JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
     AOS.init({
