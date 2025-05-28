@@ -17,6 +17,14 @@
       background: linear-gradient(135deg, #0d0d0d, #001f2f);
       color: #f1f1f1;
       font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
     }
 
     .profile-img {
@@ -55,7 +63,7 @@
       border-right: 2px solid #00fff7;
       width: 0;
       margin: 10px auto 0;
-      animation: typingLoop 10s steps(101, end) infinite, blink 0.75s step-end infinite;
+      animation: typingLoop 10s steps(100, end) infinite, blink 0.75s step-end infinite;
     }
 
     @keyframes typing {
@@ -65,7 +73,7 @@
 
     @keyframes typingLoop {
       0% { width: 0; }
-      50% { width: 101ch; }
+      50% { width: 100ch; }
       100% { width: 0; }
     }
 
@@ -110,29 +118,39 @@
       color: #00fff7;
     }
 
+    section {
+      padding: 60px 15px;
+    }
+
     @media (max-width: 768px) {
       .typing-container {
         font-size: 1.5rem;
-        animation: typing 3s steps(32, end) forwards, blink 0.75s step-end infinite;
       }
 
       .typing-loop {
         font-size: 0.95rem;
-        animation: typingLoop 12s steps(80, end) infinite, blink 0.75s step-end infinite;
       }
 
       .profile-img {
         width: 110px;
         height: 110px;
       }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+
+    p {
+      line-height: 1.6;
     }
   </style>
 </head>
 <body>
 
   <!-- Hero Section -->
-  <header class="text-center py-5">
-    <img src="images/foto.jpeg" alt="Foto Profil Nurfauzann" class="profile-img mb-3" data-aos="zoom-in">
+  <header class="text-center py-5 px-3">
+    <img src="images/foto.jpeg" alt="Foto Profil Nurfauzan" class="profile-img mb-3" data-aos="zoom-in">
     <div class="typing-container" data-aos="fade-up">
       Hi, I'm Nurfauzan Gymnastiar
     </div>
@@ -142,46 +160,52 @@
   </header>
 
   <!-- Tentang Saya -->
-  <section class="container" id="about" data-aos="fade-right">
-    <h2 class="mb-3">About Me</h2>
-    <p>
-      Hello! I'm an Informatics student at Institut Teknologi Kalimantan. I bring a unique blend of technical skills and creative problem solving to every project I work on.
-    </p>
+  <section id="about">
+    <div class="container" data-aos="fade-right">
+      <h2 class="mb-3">About Me</h2>
+      <p>
+        Hello! I'm an Informatics student at Institut Teknologi Kalimantan. I bring a unique blend of technical skills and creative problem solving to every project I work on. I focus on frontend development, where I transform user needs and designs into seamless and interactive web interfaces.
+      </p>
+    </div>
   </section>
 
   <!-- Project Showcase -->
-  <section class="container" id="projects">
-    <h2 class="mb-5 text-center" data-aos="zoom-in">My Projects</h2>
-    <div class="row g-4">
-      <div class="col-md-6 col-lg-4" data-aos="fade-up">
-        <div class="card p-3 h-100">
-          <h5 class="card-title">Website Portfolio</h5>
-          <p class="card-text">I created this website to introduce myself and showcase my work as a frontend developer.</p>
+  <section id="projects">
+    <div class="container">
+      <h2 class="mb-5 text-center" data-aos="zoom-in">My Projects</h2>
+      <div class="row g-4">
+        <div class="col-sm-12 col-md-6 col-lg-4" data-aos="fade-up">
+          <div class="card p-3 h-100">
+            <h5 class="card-title">Website Portfolio</h5>
+            <p class="card-text">I created this website to introduce myself and showcase my work as a frontend developer.</p>
+          </div>
         </div>
-      </div>
-      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-        <div class="card p-3 h-100">
-          <h5 class="card-title">Aplikasi Finance List</h5>
-          <p class="card-text">A custom Tkinter Python app that allows users to manage their daily finances simply and efficiently.</p>
+        <div class="col-sm-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="card p-3 h-100">
+            <h5 class="card-title">Aplikasi Finance List</h5>
+            <p class="card-text">A custom Tkinter Python app that allows users to manage their daily finances simply and efficiently.</p>
+          </div>
         </div>
-      </div>
-      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-        <div class="card p-3 h-100">
-          <h5 class="card-title">UI Design - KeJar App</h5>
-          <p class="card-text">Designed a mobile interface for "Keuangan Pelajar" focusing on accessibility, clarity, and user empowerment in financial literacy.</p>
+        <div class="col-sm-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="card p-3 h-100">
+            <h5 class="card-title">UI Design - KeJar App</h5>
+            <p class="card-text">Designed a mobile interface for "Keuangan Pelajar" focusing on accessibility, clarity, and user empowerment in financial literacy.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Kontak -->
-  <section class="container" id="contact" data-aos="fade-left">
-    <h2 class="mb-3">Contact</h2>
-    <ul class="list-unstyled contact-icons">
-      <li><i class="fas fa-envelope"></i><a href="mailto:nur.fauzan456@gmail.com"> nur.fauzan456@gmail.com</a></li>
-      <li><i class="fab fa-linkedin"></i><a href="#"> linkedin.com/in/nurfauzangymnastiar</a></li>
-      <li><i class="fab fa-github"></i><a href="#"> github.com/nfgcode</a></li>
-    </ul>
+  <section id="contact">
+    <div class="container" data-aos="fade-left">
+      <h2 class="mb-3">Contact</h2>
+      <ul class="list-unstyled contact-icons">
+        <li><i class="fas fa-envelope"></i><a href="mailto:nur.fauzan456@gmail.com"> nur.fauzan456@gmail.com</a></li>
+        <li><i class="fab fa-linkedin"></i><a href="#"> linkedin.com/in/nurfauzangymnastiar</a></li>
+        <li><i class="fab fa-github"></i><a href="#"> github.com/nfgcode</a></li>
+      </ul>
+    </div>
   </section>
 
   <!-- Footer -->
