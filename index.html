@@ -12,7 +12,7 @@
 
   <style>
     body {
-      background-color: #000;
+      background: linear-gradient(135deg, #0d0d0d, #001f2f);
       color: #f1f1f1;
       font-family: 'Segoe UI', sans-serif;
     }
@@ -22,11 +22,25 @@
       height: 160px;
       object-fit: cover;
       border-radius: 50%;
-      border: 3px solid #00fff7;
-      box-shadow: 0 0 15px rgba(0, 255, 247, 0.4);
+      border: 4px solid #00fff7;
+      box-shadow: 0 0 20px rgba(0, 255, 247, 0.6);
+      animation: rotateGlow 6s linear infinite;
     }
 
-    /* Typing Effect */
+    @keyframes rotateGlow {
+      0% {
+        transform: rotate(0deg);
+        box-shadow: 0 0 20px rgba(0, 255, 247, 0.6);
+      }
+      50% {
+        box-shadow: 0 0 30px rgba(0, 255, 247, 1);
+      }
+      100% {
+        transform: rotate(360deg);
+        box-shadow: 0 0 20px rgba(0, 255, 247, 0.6);
+      }
+    }
+
     .typing-container {
       font-size: 2.5rem;
       font-weight: bold;
