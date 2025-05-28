@@ -47,38 +47,22 @@
       font-weight: bold;
       color: #00fff7;
       text-shadow: 0 0 5px #00fff7;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 3px solid #00fff7;
-      width: 0;
+      text-align: center;
       margin: 0 auto;
-      animation: typing 3s steps(32, end) forwards, blink 0.75s step-end infinite;
     }
 
     .typing-loop {
-      font-size: 1rem;
+      font-size: 1.2rem;
       color: #ccc;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 2px solid #00fff7;
-      width: 0;
-      margin: 10px auto 0;
-      animation: typingLoop 10s steps(100, end) infinite, blink 0.75s step-end infinite;
+      text-align: center;
+      padding: 0 15px;
+      margin-top: 10px;
+      animation: fadeIn 1.5s ease-in;
     }
 
-    @keyframes typing {
-      from { width: 0; }
-      to { width: 24ch; }
-    }
-
-    @keyframes typingLoop {
-      0% { width: 0; }
-      50% { width: 100ch; }
-      100% { width: 0; }
-    }
-
-    @keyframes blink {
-      50% { border-color: transparent; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     h2 {
@@ -128,7 +112,7 @@
       }
 
       .typing-loop {
-        font-size: 0.95rem;
+        font-size: 1rem;
       }
 
       .profile-img {
