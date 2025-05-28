@@ -48,7 +48,7 @@
 
     @keyframes typing {
       from { width: 0; }
-      to { width: 32ch; } /* Lebarkan sesuai jumlah karakter */
+      to { width: 32ch; }
     }
 
     @keyframes blink {
@@ -63,12 +63,12 @@
       overflow: hidden;
       border-right: 2px solid #00fff7;
       width: 0;
-      animation: typingLoop 10s steps(70, end) infinite, blink 0.75s step-end infinite;
+      animation: typingLoop 10s steps(101, end) infinite, blink 0.75s step-end infinite;
     }
 
     @keyframes typingLoop {
       0% { width: 0; }
-      50% { width: 70ch; }
+      50% { width: 101ch; }
       100% { width: 0; }
     }
 
