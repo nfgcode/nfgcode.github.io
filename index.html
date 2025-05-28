@@ -20,8 +20,8 @@
     }
 
     .profile-img {
-      width: 160px;
-      height: 160px;
+      width: 140px;
+      height: 140px;
       object-fit: cover;
       border-radius: 50%;
       border: 4px solid #00fff7;
@@ -30,12 +30,12 @@
     }
 
     @keyframes glowFade {
-      from { box-shadow: 0 0 15px rgba(0, 255, 247, 0.3); }
+      from { box-shadow: 0 0 10px rgba(0, 255, 247, 0.3); }
       to { box-shadow: 0 0 30px rgba(0, 255, 247, 0.9); }
     }
 
     .typing-container {
-      font-size: 2.5rem;
+      font-size: 2rem;
       font-weight: bold;
       color: #00fff7;
       text-shadow: 0 0 5px #00fff7;
@@ -43,27 +43,24 @@
       overflow: hidden;
       border-right: 3px solid #00fff7;
       width: 0;
+      margin: 0 auto;
       animation: typing 3s steps(32, end) forwards, blink 0.75s step-end infinite;
     }
 
-    @keyframes typing {
-      from { width: 0; }
-      to { width: 32ch; }
-    }
-
-    @keyframes blink {
-      50% { border-color: transparent; }
-    }
-
     .typing-loop {
-      font-size: 1.25rem;
-      margin-top: 10px;
+      font-size: 1rem;
       color: #ccc;
       white-space: nowrap;
       overflow: hidden;
       border-right: 2px solid #00fff7;
       width: 0;
+      margin: 10px auto 0;
       animation: typingLoop 10s steps(101, end) infinite, blink 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 32ch; }
     }
 
     @keyframes typingLoop {
@@ -72,20 +69,8 @@
       100% { width: 0; }
     }
 
-    section {
-      padding: 60px 0;
-    }
-
-    .card {
-      background-color: #111;
-      border: 1px solid #222;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      color: #f1f1f1;
-    }
-
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 0 20px rgba(0, 255, 247, 0.2);
+    @keyframes blink {
+      50% { border-color: transparent; }
     }
 
     h2 {
@@ -103,6 +88,18 @@
       text-shadow: 0 0 8px #00ffe0;
     }
 
+    .card {
+      background-color: #111;
+      border: 1px solid #222;
+      color: #f1f1f1;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 20px rgba(0, 255, 247, 0.2);
+    }
+
     footer {
       background-color: #111;
       color: #aaa;
@@ -113,8 +110,21 @@
       color: #00fff7;
     }
 
-    .contact-icons li {
-      margin-bottom: 10px;
+    @media (max-width: 768px) {
+      .typing-container {
+        font-size: 1.5rem;
+        animation: typing 3s steps(32, end) forwards, blink 0.75s step-end infinite;
+      }
+
+      .typing-loop {
+        font-size: 0.95rem;
+        animation: typingLoop 12s steps(80, end) infinite, blink 0.75s step-end infinite;
+      }
+
+      .profile-img {
+        width: 110px;
+        height: 110px;
+      }
     }
   </style>
 </head>
@@ -122,11 +132,11 @@
 
   <!-- Hero Section -->
   <header class="text-center py-5">
-    <img src="images/foto.jpeg" alt="Foto Profil Nurfauzann" class="profile-img mb-4" data-aos="zoom-in">
-    <div class="typing-container mx-auto" data-aos="fade-up">
+    <img src="images/foto.jpeg" alt="Foto Profil Nurfauzann" class="profile-img mb-3" data-aos="zoom-in">
+    <div class="typing-container" data-aos="fade-up">
       Hi, I'm Nurfauzan Gymnastiar
     </div>
-    <div class="typing-loop mx-auto" data-aos="fade-up" data-aos-delay="200">
+    <div class="typing-loop" data-aos="fade-up" data-aos-delay="200">
       a frontend-focused developer who loves turning designs into dynamic web and mobile experiences.
     </div>
   </header>
@@ -134,29 +144,31 @@
   <!-- Tentang Saya -->
   <section class="container" id="about" data-aos="fade-right">
     <h2 class="mb-3">About Me</h2>
-    <p>Hello! Everyone! I am an Informatics Student at Institut Teknologi Kalimantan. I bring a unique blend of technical skills and problem solving.</p>
+    <p>
+      Hello! I'm an Informatics student at Institut Teknologi Kalimantan. I bring a unique blend of technical skills and creative problem solving to every project I work on.
+    </p>
   </section>
 
   <!-- Project Showcase -->
   <section class="container" id="projects">
-    <h2 class="mb-5 text-center" data-aos="zoom-in">My Project</h2>
+    <h2 class="mb-5 text-center" data-aos="zoom-in">My Projects</h2>
     <div class="row g-4">
-      <div class="col-md-4" data-aos="fade-up">
-        <div class="card p-3">
+      <div class="col-md-6 col-lg-4" data-aos="fade-up">
+        <div class="card p-3 h-100">
           <h5 class="card-title">Website Portfolio</h5>
-          <p class="card-text">I created this website as a means to introduce myself and showcase my works.</p>
+          <p class="card-text">I created this website to introduce myself and showcase my work as a frontend developer.</p>
         </div>
       </div>
-      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-        <div class="card p-3">
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="card p-3 h-100">
           <h5 class="card-title">Aplikasi Finance List</h5>
-          <p class="card-text">A simple custom Tkinter Python-based application that allows users to organize their daily finances.</p>
+          <p class="card-text">A custom Tkinter Python app that allows users to manage their daily finances simply and efficiently.</p>
         </div>
       </div>
-      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-        <div class="card p-3">
-          <h5 class="card-title">Design UI Mobile KeJar</h5>
-          <p class="card-text">Design for a mobile application interface focusing on usability and value for students managing their finances.</p>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="card p-3 h-100">
+          <h5 class="card-title">UI Design - KeJar App</h5>
+          <p class="card-text">Designed a mobile interface for "Keuangan Pelajar" focusing on accessibility, clarity, and user empowerment in financial literacy.</p>
         </div>
       </div>
     </div>
@@ -166,9 +178,9 @@
   <section class="container" id="contact" data-aos="fade-left">
     <h2 class="mb-3">Contact</h2>
     <ul class="list-unstyled contact-icons">
-      <li><i class="fas fa-envelope"></i><a href="mailto:nur.fauzan456@gmail.com">nur.fauzan456@gmail.com</a></li>
-      <li><i class="fab fa-linkedin"></i><a href="#">linkedin.com/in/nurfauzangymnastiar</a></li>
-      <li><i class="fab fa-github"></i><a href="#">github.com/nfgcode</a></li>
+      <li><i class="fas fa-envelope"></i><a href="mailto:nur.fauzan456@gmail.com"> nur.fauzan456@gmail.com</a></li>
+      <li><i class="fab fa-linkedin"></i><a href="#"> linkedin.com/in/nurfauzangymnastiar</a></li>
+      <li><i class="fab fa-github"></i><a href="#"> github.com/nfgcode</a></li>
     </ul>
   </section>
 
@@ -177,14 +189,11 @@
     <p>&copy; 2025 Nurfauzan Gymnastiar. All rights reserved.</p>
   </footer>
 
-  <!-- JS Scripts -->
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
-    AOS.init({
-      once: true,
-      duration: 1000
-    });
+    AOS.init({ once: true, duration: 1000 });
   </script>
 </body>
 </html>
