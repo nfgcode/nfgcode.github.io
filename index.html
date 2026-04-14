@@ -1,21 +1,40 @@
+<link rel="stylesheet" href="style.css">
+<script defer src="script.js"></script>
+
 <!DOCTYPE html>
-<html><head><meta charset='UTF-8'><title>Simulasi Model Komunikasi</title><script src='https://cdn.tailwindcss.com'></script></head><body class='p-6 bg-slate-100 font-sans'>
-<h1 class='text-2xl font-bold mb-4'>Simulasi Model Komunikasi Sistem Terdistribusi</h1>
-<div class='flex gap-2 mb-4'>
-<button onclick='sendRR()' class='px-4 py-2 bg-blue-600 text-white rounded'>Request-Response</button>
-<button onclick='sendPS()' class='px-4 py-2 bg-green-600 text-white rounded'>Publish-Subscribe</button>
-<button onclick='resetAll()' class='px-4 py-2 bg-gray-600 text-white rounded'>Reset</button></div>
-<div class='grid grid-cols-3 gap-4'>
-<div class='p-4 bg-white rounded shadow'><h2 class='font-bold'>Client / Publisher</h2><div id='client' class='mt-2 text-sm'></div></div>
-<div class='p-4 bg-white rounded shadow'><h2 class='font-bold'>Server / Broker</h2><div id='server' class='mt-2 text-sm'></div></div>
-<div class='p-4 bg-white rounded shadow'><h2 class='font-bold'>Subscriber</h2><div id='subs' class='mt-2 text-sm'></div></div>
-</div>
-<div class='mt-4 p-4 bg-white rounded shadow'><h2 class='font-bold'>Log & Perbandingan</h2><pre id='log' class='text-sm whitespace-pre-wrap'></pre></div>
-<script>
-let metrics={rr:0,ps:0};
-function log(t){document.getElementById('log').textContent+=t+'\n';}
-function sendRR(){metrics.rr++;document.getElementById('client').textContent='Mengirim request data';log('Client -> Server: Request');setTimeout(()=>{document.getElementById('server').textContent='Memproses request';},500);setTimeout(()=>{document.getElementById('client').textContent='Menerima response';log('Server -> Client: Response');showMetrics();},1000)}
-function sendPS(){metrics.ps++;document.getElementById('client').textContent='Publish event: Data Baru';log('Publisher -> Broker: Event');setTimeout(()=>{document.getElementById('server').textContent='Broker mendistribusikan event';},500);setTimeout(()=>{document.getElementById('subs').textContent='Subscriber A & B menerima event';log('Broker -> Subscribers: Broadcast');showMetrics();},1000)}
-function showMetrics(){log('Total RR='+metrics.rr+' | Total PubSub='+metrics.ps);}
-function resetAll(){document.getElementById('client').textContent='';document.getElementById('server').textContent='';document.getElementById('subs').textContent='';document.getElementById('log').textContent='';metrics={rr:0,ps:0};}
-</script></body></html>
+<html lang='id'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Simulasi Model Komunikasi</title>
+  <link rel='stylesheet' href='style.css'>
+  <script defer src='script.js'></script>
+</head>
+<body>
+  <div class='container'>
+    <h1>🚀 Simulasi Sistem Terdistribusi</h1>
+    <p>Perbandingan Request-Response, Publish-Subscribe, dan RPC</p>
+
+    <div class='buttons'>
+      <button onclick='requestResponse()'>Request-Response</button>
+      <button onclick='publishSubscribe()'>Publish-Subscribe</button>
+      <button onclick='rpc()'>RPC</button>
+      <button onclick='resetSim()'>Reset</button>
+    </div>
+
+    <div class='network'>
+      <div id='client' class='node blue'>Client</div>
+      <div id='server' class='node red'>Server</div>
+      <div id='broker' class='node green'>Broker</div>
+      <div id='sub1' class='node yellow'>Sub A</div>
+      <div id='sub2' class='node yellow'>Sub B</div>
+      <div id='arena'></div>
+    </div>
+
+    <div class='panels'>
+      <div class='panel'><h2>📜 Log</h2><pre id='log'></pre></div>
+      <div class='panel'><h2>📊 Metrics</h2><div id='metrics'></div></div>
+    </div>
+  </div>
+</body>
+</html>
