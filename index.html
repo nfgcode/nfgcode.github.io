@@ -1,40 +1,104 @@
-<link rel="stylesheet" href="style.css">
-<script defer src="script.js"></script>
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulasi Komunikasi Sistem Terdistribusi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
 
-<!DOCTYPE html>
-<html lang='id'>
-<head>
-  <meta charset='UTF-8'>
-  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-  <title>Simulasi Model Komunikasi</title>
-  <link rel='stylesheet' href='style.css'>
-  <script defer src='script.js'></script>
-</head>
-<body>
-  <div class='container'>
-    <h1>🚀 Simulasi Sistem Terdistribusi</h1>
-    <p>Perbandingan Request-Response, Publish-Subscribe, dan RPC</p>
+    <main class="app">
+      <header class="hero">
+        <h1>Simulasi Interaktif Model Komunikasi</h1>
+        <p>
+          Bandingkan perilaku <strong>Request-Response</strong> dan
+          <strong>Publish-Subscribe</strong> pada sistem terdistribusi.
+        </p>
+      </header>
 
-    <div class='buttons'>
-      <button onclick='requestResponse()'>Request-Response</button>
-      <button onclick='publishSubscribe()'>Publish-Subscribe</button>
-      <button onclick='rpc()'>RPC</button>
-      <button onclick='resetSim()'>Reset</button>
-    </div>
+      <section class="controls card">
+        <div class="control-grid">
+          <label>
+            Model
+            <select id="modelSelect">
+              <option value="requestResponse">Request-Response</option>
+              <option value="publishSubscribe">Publish-Subscribe</option>
+            </select>
+          </label>
 
-    <div class='network'>
-      <div id='client' class='node blue'>Client</div>
-      <div id='server' class='node red'>Server</div>
-      <div id='broker' class='node green'>Broker</div>
-      <div id='sub1' class='node yellow'>Sub A</div>
-      <div id='sub2' class='node yellow'>Sub B</div>
-      <div id='arena'></div>
-    </div>
+          <label>
+            Latensi Jaringan (ms)
+            <input id="latencyRange" type="range" min="100" max="2500" step="50" value="700" />
+            <span id="latencyValue">700</span>
+          </label>
 
-    <div class='panels'>
-      <div class='panel'><h2>📜 Log</h2><pre id='log'></pre></div>
-      <div class='panel'><h2>📊 Metrics</h2><div id='metrics'></div></div>
-    </div>
-  </div>
-</body>
+          <label>
+            Waktu Proses Server/Broker (ms)
+            <input id="processingRange" type="range" min="50" max="2000" step="50" value="350" />
+            <span id="processingValue">350</span>
+          </label>
+
+          <label>
+            Probabilitas Paket Hilang (%)
+            <input id="dropRange" type="range" min="0" max="40" step="1" value="5" />
+            <span id="dropValue">5</span>
+          </label>
+
+          <label>
+            Jumlah Subscriber (Pub-Sub)
+            <input id="subscriberRange" type="range" min="1" max="6" step="1" value="3" />
+            <span id="subscriberValue">3</span>
+          </label>
+        </div>
+
+        <div class="button-row">
+          <button id="sendBtn">Kirim 1 Pesan</button>
+          <button id="burstBtn">Burst 10 Pesan</button>
+          <button id="autoBtn">Auto: OFF</button>
+          <button id="resetBtn" class="secondary">Reset Metrik</button>
+        </div>
+      </section>
+
+      <section class="simulation card">
+        <div class="sim-header">
+          <h2>Visualisasi Aliran Data</h2>
+          <span id="simModeTag">Mode: Request-Response</span>
+        </div>
+        <svg id="networkSvg" viewBox="0 0 960 420" preserveAspectRatio="xMidYMid meet"></svg>
+      </section>
+
+      <section class="metrics card">
+        <h2>Perbandingan Model</h2>
+        <div class="metrics-grid">
+          <article>
+            <h3>Request-Response</h3>
+            <ul id="rrMetrics"></ul>
+          </article>
+          <article>
+            <h3>Publish-Subscribe</h3>
+            <ul id="psMetrics"></ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="logs card">
+        <div class="sim-header">
+          <h2>Log Urutan Pesan</h2>
+          <button id="clearLogBtn" class="secondary">Bersihkan Log</button>
+        </div>
+        <div id="logBox" class="log-box"></div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
 </html>
