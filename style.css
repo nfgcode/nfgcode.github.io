@@ -1,0 +1,47 @@
+:root {
+  --bg: #0f172a;
+  --card: #111827;
+  --text: #ffffff;
+  --muted: #cbd5e1;
+  --blue: #3b82f6;
+  --red: #ef4444;
+  --green: #22c55e;
+  --yellow: #facc15;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.container {
+  padding: 20px;
+}
+
+header h1 {
+  margin-bottom: 8px;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+button {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 10px;
+  background: var(--blue);
+  color: var(--text);
+  cursor: pointer;
+}
+
